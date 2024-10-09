@@ -13,7 +13,7 @@ export default function SignupLayout({
           <div className="">
             <div className="min-h-screen flex items-center justify-center bg-cover bg-center">
               {/* ------------------------------------------------Left Side---------------------------------------------------- */}
-              <div className=" p-8 rounded-lg shadow-lg w-full max-w-4xl ">
+              <div className=" p-8 rounded-lg shadow-lg w-full max-w-2xl ">
                 <div className="flex justify-between items-center mb-16">
                   <div className="text-2xl font-bold">
                     <img
