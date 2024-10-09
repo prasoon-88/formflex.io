@@ -87,6 +87,16 @@ $i: 100;
         .happy-orange-#{$i} { color: $happy-orange-100; }
         .red-power-#{$i} { color: $red-power-100; }
         .electric-green-#{$i} { color: $electric-green-100; }
+
+        .bg-noble-black-#{$i} { background-color: $noble-black-100; }
+        .bg-sunglow-#{$i} { background-color: $sunglow-100; }
+        .bg-day-blue-#{$i} { background-color: $day-blue-100; }
+        .bg-purple-blue-#{$i} { background-color: $purple-blue-100; }
+        .bg-heisenberg-blue-#{$i} { background-color: $heisenberg-blue-100; }
+        .bg-stem-green-#{$i} { background-color: $stem-green-100; }
+        .bg-happy-orange-#{$i} { background-color: $happy-orange-100; }
+        .bg-red-power-#{$i} { background-color: $red-power-100; }
+        .bg-electric-green-#{$i} { background-color: $electric-green-100; }
     }
     @else if $i == 200 {
         .noble-black-#{$i} { color: $noble-black-200; }
@@ -95,6 +105,13 @@ $i: 100;
         .purple-blue-#{$i} { color: $purple-blue-200; }
         .heisenberg-blue-#{$i} { color: $heisenberg-blue-200; }
         .stem-green-#{$i} { color: $stem-green-200; }
+
+        .bg-noble-black-#{$i} { background-color: $noble-black-200; }
+        .bg-sunglow-#{$i} { background-color: $sunglow-200; }
+        .bg-day-blue-#{$i} { background-color: $day-blue-200; }
+        .bg-purple-blue-#{$i} { background-color: $purple-blue-200; }
+        .bg-heisenberg-blue-#{$i} { background-color: $heisenberg-blue-200; }
+        .bg-stem-green-#{$i} { background-color: $stem-green-200; }
     }
     @else if $i == 300 {
         .noble-black-#{$i} { color: $noble-black-300; }
@@ -103,6 +120,13 @@ $i: 100;
         .purple-blue-#{$i} { color: $purple-blue-300; }
         .heisenberg-blue-#{$i} { color: $heisenberg-blue-300; }
         .stem-green-#{$i} { color: $stem-green-300; }
+
+        .bg-noble-black-#{$i} { background-color: $noble-black-300; }
+        .bg-sunglow-#{$i} { background-color: $sunglow-300; }
+        .bg-day-blue-#{$i} { background-color: $day-blue-300; }
+        .bg-purple-blue-#{$i} { background-color: $purple-blue-300; }
+        .bg-heisenberg-blue-#{$i} { background-color: $heisenberg-blue-300; }
+        .bg-stem-green-#{$i} { background-color: $stem-green-300; }
     }
     @else if $i == 400 {
         .noble-black-#{$i} { color: $noble-black-400; }
@@ -111,6 +135,13 @@ $i: 100;
         .purple-blue-#{$i} { color: $purple-blue-400; }
         .heisenberg-blue-#{$i} { color: $heisenberg-blue-400; }
         .stem-green-#{$i} { color: $stem-green-400; }
+
+        .bg-noble-black-#{$i} { background-color: $noble-black-400; }
+        .bg-sunglow-#{$i} { background-color: $sunglow-400; }
+        .bg-day-blue-#{$i} { background-color: $day-blue-400; }
+        .bg-purple-blue-#{$i} { background-color: $purple-blue-400; }
+        .bg-heisenberg-blue-#{$i} { background-color: $heisenberg-blue-400; }
+        .bg-stem-green-#{$i} { background-color: $stem-green-400; }
     }
     @else if $i == 500 {
         .noble-black-#{$i} { color: $noble-black-500; }
@@ -119,6 +150,13 @@ $i: 100;
         .purple-blue-#{$i} { color: $purple-blue-500; }
         .heisenberg-blue-#{$i} { color: $heisenberg-blue-500; }
         .stem-green-#{$i} { color: $stem-green-500; }
+
+        .bg-noble-black-#{$i} { background-color: $noble-black-500; }
+        .bg-sunglow-#{$i} { background-color: $sunglow-500; }
+        .bg-day-blue-#{$i} { background-color: $day-blue-500; }
+        .bg-purple-blue-#{$i} { background-color: $purple-blue-500; }
+        .bg-heisenberg-blue-#{$i} { background-color: $heisenberg-blue-500; }
+        .bg-stem-green-#{$i} { background-color: $stem-green-500; }
     }
     @else if $i == 600 {
         .noble-black-#{$i} { color: $noble-black-600; }
@@ -130,6 +168,16 @@ $i: 100;
         .happy-orange-#{$i} { color: $happy-orange-600; }
         .red-power-#{$i} { color: $red-power-600; }
         .electric-green-#{$i} { color: $electric-green-600; }
+
+        .bg-noble-black-#{$i} { background-color: $noble-black-600; }
+        .bg-sunglow-#{$i} { background-color: $sunglow-600; }
+        .bg-day-blue-#{$i} { background-color: $day-blue-600; }
+        .bg-purple-blue-#{$i} { background-color: $purple-blue-600; }
+        .bg-heisenberg-blue-#{$i} { background-color: $heisenberg-blue-600; }
+        .bg-stem-green-#{$i} { background-color: $stem-green-600; }
+        .bg-happy-orange-#{$i} { background-color: $happy-orange-600; }
+        .bg-red-power-#{$i} { background-color: $red-power-600; }
+        .bg-electric-green-#{$i} { background-color: $electric-green-600; }
     }
     @else if $i == 700 {
         .noble-black-#{$i} { color: $noble-black-700; }
@@ -138,6 +186,13 @@ $i: 100;
         .purple-blue-#{$i} { color: $purple-blue-700; }
         .heisenberg-blue-#{$i} { color: $heisenberg-blue-700; }
         .stem-green-#{$i} { color: $stem-green-700; }
+
+        .bg-noble-black-#{$i} { background-color: $noble-black-700; }
+        .bg-sunglow-#{$i} { background-color: $sunglow-700; }
+        .bg-day-blue-#{$i} { background-color: $day-blue-700; }
+        .bg-purple-blue-#{$i} { background-color: $purple-blue-700; }
+        .bg-heisenberg-blue-#{$i} { background-color: $heisenberg-blue-700; }
+        .bg-stem-green-#{$i} { background-color: $stem-green-700; }
     }
     @else if $i == 800 {
         .noble-black-#{$i} { color: $noble-black-800; }
@@ -146,6 +201,13 @@ $i: 100;
         .purple-blue-#{$i} { color: $purple-blue-800; }
         .heisenberg-blue-#{$i} { color: $heisenberg-blue-800; }
         .stem-green-#{$i} { color: $stem-green-800; }
+
+        .bg-noble-black-#{$i} { background-color: $noble-black-800; }
+        .bg-sunglow-#{$i} { background-color: $sunglow-800; }
+        .bg-day-blue-#{$i} { background-color: $day-blue-800; }
+        .bg-purple-blue-#{$i} { background-color: $purple-blue-800; }
+        .bg-heisenberg-blue-#{$i} { background-color: $heisenberg-blue-800; }
+        .bg-stem-green-#{$i} { background-color: $stem-green-800; }
     }
     @else if $i == 900 {
         .noble-black-#{$i} { color: $noble-black-900; }
@@ -157,6 +219,16 @@ $i: 100;
         .happy-orange-#{$i} { color: $happy-orange-900; }
         .red-power-#{$i} { color: $red-power-900; }
         .electric-green-#{$i} { color: $electric-green-900; }
+
+        .bg-noble-black-#{$i} { background-color: $noble-black-900; }
+        .bg-sunglow-#{$i} { background-color: $sunglow-900; }
+        .bg-day-blue-#{$i} { background-color: $day-blue-900; }
+        .bg-purple-blue-#{$i} { background-color: $purple-blue-900; }
+        .bg-heisenberg-blue-#{$i} { background-color: $heisenberg-blue-900; }
+        .bg-stem-green-#{$i} { background-color: $stem-green-900; }
+        .bg-happy-orange-#{$i} { background-color: $happy-orange-900; }
+        .bg-red-power-#{$i} { background-color: $red-power-900; }
+        .bg-electric-green-#{$i} { background-color: $electric-green-900; }
     }
 
     $i: $i + 100;
