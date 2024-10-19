@@ -9,7 +9,7 @@ const Signup = () => {
     <div>
       {/* ----------------------------------------------------Heading--------------------------------------------------------------- */}
       <h1 className="text-4xl mb-9 text-white font-sans font-normal">
-        Connect with your team and bring your creative ideas to life.
+        Connect with your team and bring your creative ideas to Life.
       </h1>
       {/* ----------------------------------------------------SignUp Form--------------------------------------------------------------- */}
       <form>
