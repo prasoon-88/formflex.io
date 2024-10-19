@@ -13,6 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* MUI icons */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+        />
+      </head>
       <body className={`antialiased`}>{children}</body>
     </html>
   );
