@@ -1,15 +1,27 @@
 "use client";
-import React from "react";
+import React, { FormEvent } from "react";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { LoginPayload } from "@/apis/auth/types";
 import { login } from "@/apis/auth";
 
 const Login = () => {
-  // const onLogin = async () => {
-  //   login({ username: "prasoon" });
-  // };
+  const onLogin = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent the default form submission
+    const formData = new FormData(e.currentTarget);
+    const payload: LoginPayload = {
+      email: formData.get("email") as string,
+      password: formData.get("password") as string,
+    };
+
+    try {
+      await login(payload);
+    } catch (error) {
+      console.log("Error during login:", error);
+    }
+  };
   return (
     <>
       <div className="my-4">
@@ -17,16 +29,18 @@ const Login = () => {
           Lets get <span className="day-blue-500">creative</span>
         </h1>
         <p className="mt-2 text-xs text-slate-400 "> login page for website</p>
-        <form>
+        <form onSubmit={onLogin}>
           <div className="mt-4">
             <Input
               type="email"
               placeholder="Email"
+              name="email"
               className="mt-2 mb-2 bg-transparent px-12 rounded active:border-green-500 ease-in duration-300 drop-shadow-lg"
             ></Input>
             <Input
               type="password"
               placeholder="Password"
+              name="password"
               className="mb-4 bg-transparent px-12 rounded active:border-green-500 ease-in duration-300 drop-shadow-lg"
             ></Input>
           </div>
@@ -41,14 +55,10 @@ const Login = () => {
               Forget Password ?
             </Link>
           </div>
-<<<<<<< Updated upstream
-          <Button className="w-full rounded-sm bg-stem-green-500 text-black hover:bg-stem-gereen-500 ">
-=======
           <Button
-            className="w-full rounded-sm bg-stem-green-500 text-black hover:bg-stem-gereen-500"
-            // onClick={onLogin}
+            className="w-full rounded-sm bg-stem-green-500 text-black hover:bg-stem-gereen-500 "
+            type="submit"
           >
->>>>>>> Stashed changes
             log in
           </Button>
           <div className="flex w-full justify-between my-6">

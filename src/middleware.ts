@@ -6,10 +6,6 @@ import { TOKEN_KEY } from "./utils/constants";
 const PUBLIC_ROUTES = ["/login", "/signup", "/verify"];
 
 const middleware = (request: NextRequest) => {
-  return auth(request); // Ensure we return the result of `auth`
-};
-
-const auth = (request: NextRequest) => {
   const currPath = request.nextUrl.pathname;
   const isPublicRoute = PUBLIC_ROUTES.includes(currPath);
   const token = request.cookies.get(TOKEN_KEY); // Getting the token from cookies
@@ -36,10 +32,11 @@ const auth = (request: NextRequest) => {
     return NextResponse.next();
   }
 };
-
 // Apply middleware to all routes, including nested ones
 export const config = {
-  matcher: "/:path*",
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|images/|^/$).*)", // Exclude static files, assets, and root ('/')
+  ],
 };
 
 export default middleware;

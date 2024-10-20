@@ -7,20 +7,24 @@ axios.defaults.xsrfHeaderName = "X-CSRFToken";
 axios.defaults.withCredentials = true;
 
 export const headers = {
+  "Content-Type": "application/json",
   Authorization: `Token ${getCookie(TOKEN_KEY)}`,
 };
 
 type TMethod = "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
 
-const CURR_VERSION = "";
+export type TApiResponse = {
+  data: unknown;
+  status: number;
+};
 
 const createPaylaod = (method: TMethod, url: string) => ({
   method,
-  url: `${process.env.BACKEND_URL}/${CURR_VERSION}${url}`,
+  url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/${url}`,
 });
 
 const APIS = {
-  login: createPaylaod("POST", "/login"),
+  login: createPaylaod("POST", "/onboarding/login/"),
 };
 
 export default APIS;
