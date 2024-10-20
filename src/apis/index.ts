@@ -20,7 +20,7 @@ export type TApiResponse = {
 
 const createPaylaod = (method: TMethod, url: string) => ({
   method,
-  url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/${url}`,
+  url: `${process.env.NEXT_PUBLIC_BACKEND_URL}${url}`,
 });
 
 const APIS = {
