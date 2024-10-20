@@ -8,6 +8,7 @@ import { LoginPayload } from "@/apis/auth/types";
 import { login } from "@/apis/auth";
 
 const Login = () => {
+  // Triger on login
   const onLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent the default form submission
     const formData = new FormData(e.currentTarget);
@@ -22,6 +23,7 @@ const Login = () => {
       console.log("Error during login:", error);
     }
   };
+
   return (
     <>
       <div className="my-4">

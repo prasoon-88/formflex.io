@@ -20,11 +20,13 @@ export type TApiResponse = {
 
 const createPaylaod = (method: TMethod, url: string) => ({
   method,
-  url: `${process.env.NEXT_PUBLIC_BACKEND_URL}${url}`,
+  url: `${process.env.NEXT_PUBLIC_BACKEND_URL}${url}`, // Template Literals
 });
 
 const APIS = {
   login: createPaylaod("POST", "/onboarding/login/"),
+  signup: createPaylaod("POST", "/onboarding/signup/"),
+  logout: createPaylaod("POST", "/onboarding/logout/"),
 };
 
 export default APIS;

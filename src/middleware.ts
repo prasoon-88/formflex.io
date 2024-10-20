@@ -32,6 +32,7 @@ const middleware = (request: NextRequest) => {
     return NextResponse.next();
   }
 };
+
 // Apply middleware to all routes, including nested ones
 export const config = {
   matcher: [
