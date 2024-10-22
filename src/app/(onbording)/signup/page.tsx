@@ -1,6 +1,6 @@
 "use client";
 import React, { FormEvent } from "react";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -10,23 +10,34 @@ import { SignupPaylaod } from "@/apis/auth/types";
 import { signup } from "@/apis/auth";
 
 const Signup = () => {
-  // const router = useRouter();
-  // Triger on login
+  const router = useRouter();
+
+  // Trigger on signup
   const onSignup = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent the default form submission
     const formData = new FormData(e.currentTarget);
+    const password = formData.get("password") as string;
+    const repeatPassword = formData.get("repeatPassword") as string;
+
+    if (password !== repeatPassword) {
+      alert("Password and confirm password do not match");
+      return;
+    }
+
+    const username = formData.get("fullName") as string;
+    const email = formData.get("email") as string;
     const payload: SignupPaylaod = {
-      firstName: formData.get("firstName") as string,
-      lastName: formData.get("lastName") as string,
-      email: formData.get("email") as string,
-      password: formData.get("password") as string,
+      password,
+      username,
+      email,
     };
 
     try {
-      // `console.log("Signup successful");`
       await signup(payload);
-      // Redirect to login page upon successful signup
-      // router.push("/login");
+      // Ensure router is ready before pushing
+      if (router) {
+        router.push("/login");
+      }
     } catch (error) {
       console.log("Error during signup:", error);
     }
@@ -43,23 +54,27 @@ const Signup = () => {
         <div className="grid grid-cols-2 gap-4 mb-9">
           <div>
             <Label className="block text-sm mb-2 text-gray-600">Name</Label>
-            <Input type="text" placeholder="Enter full Name" />
+            <Input name="fullName" type="text" placeholder="Enter full Name" />
           </div>
           <div>
             <Label className="block text-sm mb-2 text-gray-600">Email</Label>
-            <Input type="email" placeholder="Enter Email" />
+            <Input name="email" type="email" placeholder="Enter Email" />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 mb-5 items-center">
           <div>
             <Label className="block text-sm mb-2 text-gray-600">Password</Label>
-            <Input type="password" placeholder="Password" />
+            <Input name="password" type="password" placeholder="Password" />
           </div>
           <div>
             <Label className="block text-sm mb-2 text-gray-600">
               Repeat password
             </Label>
-            <Input type="password" placeholder="Repeat password" />
+            <Input
+              name="repeatPassword"
+              type="password"
+              placeholder="Repeat password"
+            />
           </div>
         </div>
         {/* ----------------------------------------------------Terms Condition---------------------------------------------------------------------- */}

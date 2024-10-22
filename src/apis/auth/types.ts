@@ -4,8 +4,7 @@ export interface LoginPayload {
 }
 
 export interface SignupPaylaod {
-  firstName: string;
-  lastName: string;
+  username: string;
   email: string;
   password: string;
 }
