@@ -1,10 +1,37 @@
-import React from "react";
+"use client";
+import React, { FormEvent } from "react";
+import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { SignupPaylaod } from "@/apis/auth/types";
+import { signup } from "@/apis/auth";
+
 const Signup = () => {
+  // const router = useRouter();
+  // Triger on login
+  const onSignup = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent the default form submission
+    const formData = new FormData(e.currentTarget);
+    const payload: SignupPaylaod = {
+      firstName: formData.get("firstName") as string,
+      lastName: formData.get("lastName") as string,
+      email: formData.get("email") as string,
+      password: formData.get("password") as string,
+    };
+
+    try {
+      console.log("Signup successful");
+      await signup(payload);
+      // Redirect to login page upon successful signup
+      // router.push('/login');
+    } catch (error) {
+      console.log("Error during signup:", error);
+    }
+  };
+
   return (
     <div>
       {/* ----------------------------------------------------Heading--------------------------------------------------------------- */}
@@ -12,7 +39,7 @@ const Signup = () => {
         Connect with your team and bring your creative ideas to Life.
       </h1>
       {/* ----------------------------------------------------SignUp Form--------------------------------------------------------------- */}
-      <form>
+      <form onSubmit={onSignup}>
         <div className="grid grid-cols-2 gap-4 mb-9">
           <div>
             <Label className="block text-sm mb-2 text-gray-600">
