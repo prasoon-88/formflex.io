@@ -1,5 +1,11 @@
 .sidepannel {}
 
 .navitem {
-   
+    &:hover {
+        background: rgb(18, 18, 18);
+    }
+
+    &:active {
+        background: black;
+    }
 }

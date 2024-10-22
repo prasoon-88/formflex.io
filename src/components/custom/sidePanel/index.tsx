@@ -4,7 +4,6 @@ import { cx } from "class-variance-authority";
 import Icon from "@/components/ui/icon";
 import Link from "next/link";
 
-
 interface INavGroup {
   groupName: string;
   navItems: INavItem[];
@@ -24,29 +23,29 @@ const NAV_GROUP: INavGroup[] = [
     navItems: [
       {
         text: "home",
-        icon: <Icon iconName="home" />,
+        icon: <Icon iconName="home" style={{ fontSize: 20 }} />,
         link: BASE + "/",
       },
       {
         text: "forms",
-        icon: <Icon iconName="texture" />,
+        icon: <Icon iconName="texture" style={{ fontSize: 20 }} />,
         link: BASE + "/forms/",
       },
 
       {
         text: "analytics",
-        icon: <Icon iconName="bar_chart" />,
+        icon: <Icon iconName="bar_chart" style={{ fontSize: 20 }} />,
         link: BASE + "/analytics/",
       },
 
       {
         text: "settings",
-        icon: <Icon iconName="settings" />,
+        icon: <Icon iconName="settings" style={{ fontSize: 20 }} />,
         link: BASE + "/settings/",
       },
       {
         text: "create form",
-        icon: <Icon iconName="plumbing" />,
+        icon: <Icon iconName="plumbing" style={{ fontSize: 20 }} />,
         link: BASE + "/create/",
       },
     ],
@@ -57,10 +56,11 @@ const NavItem = ({ text, icon, link }: INavItem) => {
   return (
     <Link
       href={link}
-      className={
-        (cx(styles["navitem"]),
-        "flex gap-2 py-5 px-4 rounded-3xl text-center font-semibold hover:bg-gradient-to-r from-gray-700 to-transparent")
-      }
+      className={cx(
+        styles["navitem"],
+        "py-3 px-4 rounded-sm font-medium",
+        "flex items-center gap-4"
+      )}
     >
       {icon} <span className={(styles["navtext"], "capitalize")}>{text}</span>
     </Link>
@@ -69,11 +69,44 @@ const NavItem = ({ text, icon, link }: INavItem) => {
 
 const NavGroup = ({ groupName, navItems }: INavGroup) => {
   return (
-    <div>
-      <div className="capitalize m-5 noble-black-400">{groupName}</div>
-      {navItems.map((navItem, index) => (
-        <NavItem key={index} {...navItem} />
-      ))}
+    <div className="px-2 py-6">
+      <div className="capitalize px-4 text-xs font-semibold noble-black-400 mb-6">
+        {groupName}
+      </div>
+      <div className="grid gap-2">
+        {navItems.map((navItem, index) => (
+          <NavItem key={index} {...navItem} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+interface INavItemWithImage {
+  withBg?: boolean;
+  icon?: ReactNode;
+}
+
+const NavItemWithImage = ({ withBg, icon }: INavItemWithImage) => {
+  return (
+    <div
+      className={cx(
+        "flex justify-between items-center px-4 py-3 m-2 rounded-lg",
+        withBg && styles["navItemWithBG"]
+      )}
+    >
+      <div className="flex items-center gap-4 cursor-pointer ">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoHwpDcDTQaXme54x16yp2tAQKceNuj_1Jaw&s"
+          className="w-10 h-10 rounded-full "
+        />
+        <div className="">
+          <p className="font-semibold text-white text-sm">team name</p>
+          <p className="font-medium text-xs stem-green-500 ">member name</p>
+        </div>
+      </div>
+
+      <div className="flex flex-col ">{icon}</div>
     </div>
   );
 };
@@ -87,50 +120,14 @@ const SidePannel = () => {
       }
     >
       <div>
-        <div className="flex flex-row justify-between p-5 border-y-2 border-y-emerald-900 ">
-          <div className="flex flex-row justify-between cursor-pointer ">
-            <div className="px-4">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoHwpDcDTQaXme54x16yp2tAQKceNuj_1Jaw&s"
-                className="w-10 h-10 flex rounded-full "
-              />
-            </div>
-            <div className="">
-              <p className="font-semibold text-white ">team name</p>
-              <p className="font-medium text-sm font-semibold  stem-green-500 ">
-                member name
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col h-5 w-5 mr-3 hover:border-2 hover:border-gray-600 self-center cursor-pointer" >
-            <img
-              src="/images/onboarding/chevron-down.png"
-              alt="icon"
-              className=""
-            />
-          </div>
-        </div>
+        <NavItemWithImage />
 
         {NAV_GROUP.map((group, index) => (
           <NavGroup key={index} {...group} />
         ))}
       </div>
 
-      <div className="mb-2 p-2 border-y-2 border-y-emerald-900">
-        <div className="flex flex-row border-2 border-none p-2 rounded-xl bg-gradient-to-r from-transparent to-gray-700 cursor-pointer">
-          <div className="px-7">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoHwpDcDTQaXme54x16yp2tAQKceNuj_1Jaw&s"
-              className="w-10 h-10 flex rounded-full "
-            />
-          </div>
-          <div className="">
-            <p className="font-semibold text-white text-lg">Ayush Kurmi</p>
-            <p className="font-medium text-sm stem-green-500">subscription</p>
-          </div>
-        </div>
-      </div>
+      <NavItemWithImage withBg />
     </div>
   );
 };
