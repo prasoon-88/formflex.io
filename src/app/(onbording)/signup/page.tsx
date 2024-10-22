@@ -1,6 +1,6 @@
 "use client";
 import React, { FormEvent } from "react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -23,10 +23,10 @@ const Signup = () => {
     };
 
     try {
-      console.log("Signup successful");
+      // `console.log("Signup successful");`
       await signup(payload);
       // Redirect to login page upon successful signup
-      // router.push('/login');
+      // router.push("/login");
     } catch (error) {
       console.log("Error during signup:", error);
     }
@@ -42,16 +42,12 @@ const Signup = () => {
       <form onSubmit={onSignup}>
         <div className="grid grid-cols-2 gap-4 mb-9">
           <div>
-            <Label className="block text-sm mb-2 text-gray-600">
-              First name
-            </Label>
-            <Input type="text" placeholder="First Name" />
+            <Label className="block text-sm mb-2 text-gray-600">Name</Label>
+            <Input type="text" placeholder="Enter full Name" />
           </div>
           <div>
-            <Label className="block text-sm mb-2 text-gray-600">
-              Last name
-            </Label>
-            <Input type="text" placeholder="Last name" />
+            <Label className="block text-sm mb-2 text-gray-600">Email</Label>
+            <Input type="email" placeholder="Enter Email" />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 mb-5 items-center">
