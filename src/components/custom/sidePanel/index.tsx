@@ -106,7 +106,7 @@ const NavItemWithImage = ({ withBg, icon }: INavItemWithImage) => {
         </div>
       </div>
 
-      <div className="flex flex-col ">{icon}</div>
+      <div className="flex flex-col">{icon}</div>
     </div>
   );
 };
@@ -127,7 +127,7 @@ const SidePannel = () => {
         ))}
       </div>
 
-      <NavItemWithImage withBg />
+      <NavItemWithImage withBg={true}/>
     </div>
   );
 };
