@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import { cx } from "class-variance-authority";
 import Icon from "@/components/ui/icon";
 import Link from "next/link";
+import Image from "next/image";
 
 interface INavGroup {
   groupName: string;
@@ -96,9 +97,12 @@ const NavItemWithImage = ({ withBg, icon }: INavItemWithImage) => {
       )}
     >
       <div className="flex items-center gap-4 cursor-pointer ">
-        <img
+        <Image
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoHwpDcDTQaXme54x16yp2tAQKceNuj_1Jaw&s"
-          className="w-10 h-10 rounded-full "
+          className="rounded-full h-10 w-10"
+          width={40}
+          height={40}
+          alt="Picture"
         />
         <div className="">
           <p className="font-semibold text-white text-sm">team name</p>
@@ -127,7 +131,7 @@ const SidePannel = () => {
         ))}
       </div>
 
-      <NavItemWithImage withBg={true}/>
+      <NavItemWithImage withBg={true} />
     </div>
   );
 };
