@@ -8,7 +8,7 @@ axios.defaults.withCredentials = true;
 
 export const headers = {
   "Content-Type": "application/json",
-  Authorization: `Token ${getCookie(TOKEN_KEY)}`,
+  Authorization: getCookie(TOKEN_KEY),
 };
 
 type TMethod = "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
@@ -27,6 +27,7 @@ const APIS = {
   login: createPaylaod("POST", "/onboarding/login/"),
   signup: createPaylaod("POST", "/onboarding/signup/"),
   logout: createPaylaod("POST", "/onboarding/logout/"),
+  verify: createPaylaod("GET", "/onboarding/verify/"),
 };
 
 export default APIS;

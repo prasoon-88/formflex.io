@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LoginPayload } from "@/apis/auth/types";
 import { login } from "@/apis/auth";
+import { setCookie } from "@/utils";
+import { TOKEN_KEY } from "@/utils/constants";
 
 const Login = () => {
   // Triger on login
@@ -18,7 +20,10 @@ const Login = () => {
     };
 
     try {
-      await login(payload);
+      const resp = await login(payload);
+      if (resp.status == 200 && resp.data?.accessToken) {
+        setCookie(TOKEN_KEY, resp.data.accessToken);
+      }
     } catch (error) {
       console.log("Error during login:", error);
     }

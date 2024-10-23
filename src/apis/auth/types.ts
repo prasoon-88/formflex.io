@@ -8,3 +8,7 @@ export interface SignupPaylaod {
   email: string;
   password: string;
 }
+
+export interface VerifyPayload {
+  token: string;
+}
