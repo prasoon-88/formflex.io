@@ -59,7 +59,7 @@ const NavItem = ({ text, icon, link }: INavItem) => {
       href={link}
       className={cx(
         styles["navitem"],
-        "py-3 px-4 rounded-sm font-medium",
+        "py-3 px-4 rounded-sm font-medium text-sm",
         "flex items-center gap-4"
       )}
     >
@@ -86,9 +86,10 @@ const NavGroup = ({ groupName, navItems }: INavGroup) => {
 interface INavItemWithImage {
   withBg?: boolean;
   icon?: ReactNode;
+  name: string;
 }
 
-const NavItemWithImage = ({ withBg, icon }: INavItemWithImage) => {
+const NavItemWithImage = ({ withBg, icon, name }: INavItemWithImage) => {
   return (
     <div
       className={cx(
@@ -105,8 +106,8 @@ const NavItemWithImage = ({ withBg, icon }: INavItemWithImage) => {
           alt="Picture"
         />
         <div className="">
-          <p className="font-semibold text-white text-sm">team name</p>
-          <p className="font-medium text-xs stem-green-500 ">member name</p>
+          <p className="font-semibold text-white text-sm">{name}</p>
+          <p className="font-medium text-xs stem-green-500 ">Member name</p>
         </div>
       </div>
 
@@ -118,20 +119,20 @@ const NavItemWithImage = ({ withBg, icon }: INavItemWithImage) => {
 const SidePannel = () => {
   return (
     <div
-      className={
-        (cx(styles["sidepannel"]),
-        "flex flex-col justify-between h-screen bg-noble-black-700")
-      }
+      className={cx(
+        styles["sidepanel"],
+        "flex flex-col justify-between bg-noble-black-800 rounded-md m-2"
+      )}
     >
       <div>
-        <NavItemWithImage />
+        <NavItemWithImage name="Prasoon Asati" />
 
         {NAV_GROUP.map((group, index) => (
           <NavGroup key={index} {...group} />
         ))}
       </div>
 
-      <NavItemWithImage withBg={true} />
+      <NavItemWithImage name="Ayush Kurmi" withBg />
     </div>
   );
 };
