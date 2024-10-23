@@ -1,0 +1,17 @@
+.sidepanel {
+    height: calc(100% - 16px);
+}
+
+.navitem {
+    &:hover {
+        background: linear-gradient(117.58deg, rgba(215, 237, 237, 0.16) -47.79%, rgba(204, 235, 235, 0) 100%);
+    }
+
+    &:active {
+        background: black;
+    }
+}
+
+.navItemWithBG {
+    background: linear-gradient(117.58deg, rgba(215, 237, 237, 0.16) -47.79%, rgba(204, 235, 235, 0) 100%);
+}
