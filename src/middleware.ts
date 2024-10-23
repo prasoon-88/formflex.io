@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 import { TOKEN_KEY } from "./utils/constants";
 
 // Public urls -> user is allowed to access these without requiring auth
-const PUBLIC_ROUTES = ["/login", "/signup", "/verify"];
+const PUBLIC_ROUTES = ["/login", "/signup"];
 
 const middleware = (request: NextRequest) => {
   const currPath = request.nextUrl.pathname;
